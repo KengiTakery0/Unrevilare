@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
 
     private float moveDirection;
 
+    public bool isShowAbbityMenu {  get; set; }
     public void SetMoveDirection(float direction)
     {
         moveDirection = direction;
@@ -24,6 +25,12 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(moveDirection);
+        Debug.Log(isShowAbbityMenu);
+        Move();
+    }
+
+    void Move()
+    {
+        playerRigitBody.velocity = new Vector2(speed* moveDirection*Time.deltaTime, playerRigitBody.velocity.y);
     }
 }
