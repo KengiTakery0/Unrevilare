@@ -41,3 +41,27 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BackGround
+    uniqueID: 3573910625
+    locked: 0
+  - name: Ground
+    uniqueID: 1497091847
+    locked: 0
+  - name: Water
+    uniqueID: 4162371111
+    locked: 0
+  - name: Enemyes
+    uniqueID: 2347564905
+    locked: 0
+  - name: Proops
+    uniqueID: 2889934093
+    locked: 0
+  - name: Player
+    uniqueID: 2824483371
+    locked: 0
+  - name: Coins
+    uniqueID: 1645950307
+    locked: 0
+  - name: UI
+    uniqueID: 4201101871
+    locked: 0
