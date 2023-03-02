@@ -17,7 +17,10 @@ public class SceneController
     }
 
 
-
+    public void SaveGameScene(int Index)
+    {
+        PlayerPrefs.SetInt(GAME_LEVEL_INDEX, Index);
+    }
     public void LoadGameScene()
     {
         SceneManager.LoadScene(gamesceneIndex);

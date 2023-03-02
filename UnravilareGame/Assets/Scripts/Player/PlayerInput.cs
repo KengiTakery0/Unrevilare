@@ -18,13 +18,25 @@ public class PlayerInput : MonoBehaviour
     {
         if(inputValue.isPressed) _player.Jump();
     }
-    public void OnShowAbbility(InputValue context)
+
+    public void OnApplyAbility(InputValue inputValue)
+    { 
+       if (inputValue.Get<float>() != 0)
+        {
+           switch(_player.currentAbbilityIndex)
+            {
+                case 0: _player.UseAtackAbility(); break;
+                case 1: _player.UseShieldAbility(); break;
+            }
+        }
+    }
+    public void OnShowAbility(InputValue inputValue)
     {
-        if ( context.Get<float>() != 0 )
+        if ( inputValue.Get<float>() != 0 )
         {
             _player.ShowAbbilityPanel(true);
         }
-        else if (context.Get<float>() == default )
+        else if (inputValue.Get<float>() == default )
         {
             _player.ShowAbbilityPanel(false);
         }

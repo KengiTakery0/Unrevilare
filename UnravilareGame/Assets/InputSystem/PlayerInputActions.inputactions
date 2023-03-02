@@ -24,8 +24,8 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "ShowAbbility",
-                    "type": "Value",
+                    "name": "ShowAbility",
+                    "type": "PassThrough",
                     "id": "67d242b5-c873-4a56-b540-9b03a0633965",
                     "expectedControlType": "Button",
                     "processors": "",
@@ -40,6 +40,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "ApplyAbility",
+                    "type": "Value",
+                    "id": "a8b8b86e-3d60-4c3a-b4c0-1c4f8f994fcf",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -127,7 +136,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "ShowAbbility",
+                    "action": "ShowAbility",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -139,6 +148,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "278602b7-0232-48e9-b16a-8dbae793e3d7",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ApplyAbility",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
