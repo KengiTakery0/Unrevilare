@@ -25,8 +25,17 @@
                 },
                 {
                     "name": "ShowAbbility",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "67d242b5-c873-4a56-b540-9b03a0633965",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "eeee45bf-82ed-4bb7-bdd5-9beff57f509a",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -119,6 +128,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "ShowAbbility",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e5e05468-c3e4-4fec-9935-ad86ce8a149d",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

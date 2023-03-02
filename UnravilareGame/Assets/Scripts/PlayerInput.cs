@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerInput : MonoBehaviour
 {
-    
+
     [SerializeField] Player _player;
 
     public void OnMove(InputValue inputValue)
@@ -16,16 +16,18 @@ public class PlayerInput : MonoBehaviour
 
     public void OnJump(InputValue inputValue)
     {
-
+        if(inputValue.isPressed) _player.Jump();
     }
-    public void OnShowAbbility(InputValue inputValue)
+    public void OnShowAbbility(InputValue context)
     {
-        if (inputValue.isPressed)
+        if ( context.Get<float>() != 0 )
         {
-           _player.isShowAbbityMenu= true;
+            _player.ShowAbbilityPanel(true);
         }
-        else _player.isShowAbbityMenu = false;  
-        
+        else if (context.Get<float>() == default )
+        {
+            _player.ShowAbbilityPanel(false);
+        }
     }
 
 }

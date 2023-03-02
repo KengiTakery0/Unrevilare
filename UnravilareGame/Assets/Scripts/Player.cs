@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] GameObject AbbilityPanel;
 
     [SerializeField] float speed;
+    [SerializeField] float jumpStreigth;
 
     [SerializeField] Rigidbody2D playerRigitBody;
+    [SerializeField] BoxCollider2D groungcheck;
 
     private float moveDirection;
 
-    public bool isShowAbbityMenu {  get; set; }
     public void SetMoveDirection(float direction)
     {
         moveDirection = direction;
@@ -19,18 +21,27 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(isShowAbbityMenu);
         Move();
+    }
+    public void Jump()
+    {
+        if (!groungcheck.IsTouchingLayers(LayerMask.GetMask("Ground"))) return;
+        playerRigitBody.velocity += new Vector2(playerRigitBody.velocity.x, jumpStreigth);
     }
 
     void Move()
     {
-        playerRigitBody.velocity = new Vector2(speed* moveDirection*Time.deltaTime, playerRigitBody.velocity.y);
+        playerRigitBody.velocity = new Vector2(Mathf.Pow(speed,2) * moveDirection * Time.deltaTime, playerRigitBody.velocity.y);
+    }
+
+    public void ShowAbbilityPanel(bool state)
+    {
+        AbbilityPanel.SetActive(state);
     }
 }
