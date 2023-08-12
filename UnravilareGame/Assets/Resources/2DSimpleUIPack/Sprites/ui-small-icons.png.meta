@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -125,6 +125,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -132,8 +144,8 @@ TextureImporter:
       name: ui-small-icons_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 21
+        x: 0
+        y: 25
         width: 8
         height: 7
       alignment: 0
@@ -153,8 +165,8 @@ TextureImporter:
       name: ui-small-icons_1
       rect:
         serializedVersion: 2
-        x: 20
-        y: 21
+        x: 9
+        y: 25
         width: 8
         height: 7
       alignment: 0
@@ -174,10 +186,10 @@ TextureImporter:
       name: ui-small-icons_2
       rect:
         serializedVersion: 2
-        x: 4
-        y: 4
+        x: 18
+        y: 25
         width: 8
-        height: 8
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,8 +207,8 @@ TextureImporter:
       name: ui-small-icons_3
       rect:
         serializedVersion: 2
-        x: 20
-        y: 4
+        x: 0
+        y: 0
         width: 8
         height: 8
       alignment: 0
@@ -212,6 +224,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: ui-small-icons_4
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdda46c4ad3c4ee42ae0d5c5cc8b8a0d
+      internalID: -2174425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-small-icons_5
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a44d17352e845ee49ab98dd955ea987e
+      internalID: 200607648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -223,10 +277,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ui-small-icons_0: 288499219
-      ui-small-icons_1: -2025331508
+      ui-small-icons_4: -2174425
       ui-small-icons_2: 1209302001
+      ui-small-icons_0: 288499219
+      ui-small-icons_5: 200607648
       ui-small-icons_3: -766611279
+      ui-small-icons_1: -2025331508
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
