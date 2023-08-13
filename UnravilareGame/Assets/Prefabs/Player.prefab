@@ -561,6 +561,7 @@ GameObject:
   - component: {fileID: 4495233861917700712}
   - component: {fileID: 4495233861917700708}
   - component: {fileID: 4495233861917700715}
+  - component: {fileID: 5220441529338699668}
   - component: {fileID: 4495233861917700714}
   - component: {fileID: 4495233861917700713}
   - component: {fileID: 4495233861917700709}
@@ -647,11 +648,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _runningspeed: 2
   _jumpStreigth: 5
-  _helth: 0
   _playerRigitBody: {fileID: 4495233861917700713}
   _groungcheck: {fileID: 4495233862045382365}
-  playerInput: {fileID: 4495233861917700714}
   _playerAnimator: {fileID: 1021203508902283163}
+  playerInput: {fileID: 4495233861917700714}
+--- !u!114 &5220441529338699668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4495233861917700719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 758daa6ed2715f94ab97a72f02a1a92e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  helth: 4
 --- !u!114 &4495233861917700714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -698,8 +711,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.05363545}
-  m_Size: {x: 0.5, y: 0.8467559}
+  m_Offset: {x: -0.03111267, y: -0.08474809}
+  m_Size: {x: 0.51697063, y: 0.78453064}
   m_Direction: 0
 --- !u!1 &4495233861935568539
 GameObject:

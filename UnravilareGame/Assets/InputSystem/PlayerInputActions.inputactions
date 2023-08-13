@@ -163,6 +163,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "UI",
+            "id": "09a5b321-9afc-4e56-a9ee-a625a042f711",
+            "actions": [
+                {
+                    "name": "ActivatePausePanel",
+                    "type": "Button",
+                    "id": "0b16fc51-e47a-4e0a-9911-001cd75c1889",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "55b3011c-6152-4933-8de0-05d13ece7a01",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ActivatePausePanel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

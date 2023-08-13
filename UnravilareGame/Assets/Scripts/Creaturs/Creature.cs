@@ -7,28 +7,24 @@ public class Creature : MonoBehaviour
     [Header("Stats")]
     [SerializeField] float _runningspeed;
     [SerializeField] float _jumpStreigth;
-    [SerializeField] float _helth;
 
     [Header("Phisics")]
     [SerializeField] Rigidbody2D _playerRigitBody;
     [SerializeField] BoxCollider2D _groungcheck;
-    [SerializeField] PlayerInput playerInput;
+  
 
 
 
     [Header("Animation")]
     [SerializeField] Animator _playerAnimator;
 
-    private float moveDirection;
+    private static readonly int isRunningKey = Animator.StringToHash("isRunning");
+    private static readonly int isJumpingKey = Animator.StringToHash("isJumped");
+    private static readonly int isFallingKey = Animator.StringToHash("isFalling");
 
-    void OnEnable()
-    {
-        playerInput.onJump += Jump;
-    }
-    private void OnDisable()
-    {
-        playerInput.onJump -= Jump;
-    }
+    public float moveDirection { get; set; }
+
+  
 
     protected virtual void FixedUpdate()
     {
@@ -39,22 +35,21 @@ public class Creature : MonoBehaviour
 
     void Move()
     {
-        moveDirection = playerInput.moveDir;
         _playerRigitBody.velocity = new Vector2(Mathf.Pow(_runningspeed, 2) * moveDirection, _playerRigitBody.velocity.y);
         bool hasHorizontalMove = Mathf.Abs(_playerRigitBody.velocity.x) > Mathf.Epsilon;
-        _playerAnimator.SetBool("isRunning", hasHorizontalMove);
+        _playerAnimator.SetBool(isRunningKey, hasHorizontalMove);
     }
     protected virtual void Jump()
     {
         if (!_groungcheck.IsTouchingLayers(LayerMask.GetMask("Ground"))) return;
         _playerRigitBody.velocity += new Vector2(_playerRigitBody.velocity.x, _jumpStreigth);
-        _playerAnimator.SetTrigger("isJumped");
+        _playerAnimator.SetTrigger(isJumpingKey);
     }
     void isFalling()
     {
         if (_playerRigitBody.velocity.y < 0 && !_groungcheck.IsTouchingLayers(LayerMask.GetMask("Ground")))
         {
-            _playerAnimator.SetTrigger("isFalling");
+            _playerAnimator.SetTrigger(isFallingKey);
         }
     }
 

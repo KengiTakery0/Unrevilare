@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -115,6 +115,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -727,35 +739,35 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SPA_Player_Ginger_0: -1915822945
-      SPA_Player_Ginger_1: -278348233
-      SPA_Player_Ginger_10: -1842581236
-      SPA_Player_Ginger_11: 1710664999
-      SPA_Player_Ginger_12: -210559611
-      SPA_Player_Ginger_13: -232833763
-      SPA_Player_Ginger_14: -177611698
-      SPA_Player_Ginger_15: 305935380
-      SPA_Player_Ginger_16: 917169088
-      SPA_Player_Ginger_17: -827040863
-      SPA_Player_Ginger_18: -460611029
-      SPA_Player_Ginger_19: -1183866574
-      SPA_Player_Ginger_2: -1241709872
-      SPA_Player_Ginger_20: -960604422
-      SPA_Player_Ginger_21: -293950551
-      SPA_Player_Ginger_22: 1493401683
-      SPA_Player_Ginger_23: -1072666850
-      SPA_Player_Ginger_24: 912029756
-      SPA_Player_Ginger_25: -758716372
-      SPA_Player_Ginger_26: -1471232644
-      SPA_Player_Ginger_27: 2130366484
-      SPA_Player_Ginger_28: -1894491439
-      SPA_Player_Ginger_3: 1651324975
-      SPA_Player_Ginger_4: -1571245746
-      SPA_Player_Ginger_5: -34447886
-      SPA_Player_Ginger_6: -290036234
       SPA_Player_Ginger_7: 597288998
-      SPA_Player_Ginger_8: -306174795
+      SPA_Player_Ginger_3: 1651324975
+      SPA_Player_Ginger_15: 305935380
+      SPA_Player_Ginger_1: -278348233
+      SPA_Player_Ginger_28: -1894491439
+      SPA_Player_Ginger_19: -1183866574
+      SPA_Player_Ginger_23: -1072666850
+      SPA_Player_Ginger_2: -1241709872
+      SPA_Player_Ginger_0: -1915822945
+      SPA_Player_Ginger_14: -177611698
+      SPA_Player_Ginger_17: -827040863
+      SPA_Player_Ginger_16: 917169088
+      SPA_Player_Ginger_21: -293950551
       SPA_Player_Ginger_9: 1696929838
+      SPA_Player_Ginger_6: -290036234
+      SPA_Player_Ginger_22: 1493401683
+      SPA_Player_Ginger_26: -1471232644
+      SPA_Player_Ginger_24: 912029756
+      SPA_Player_Ginger_4: -1571245746
+      SPA_Player_Ginger_10: -1842581236
+      SPA_Player_Ginger_12: -210559611
+      SPA_Player_Ginger_25: -758716372
+      SPA_Player_Ginger_18: -460611029
+      SPA_Player_Ginger_13: -232833763
+      SPA_Player_Ginger_20: -960604422
+      SPA_Player_Ginger_8: -306174795
+      SPA_Player_Ginger_27: 2130366484
+      SPA_Player_Ginger_11: 1710664999
+      SPA_Player_Ginger_5: -34447886
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
