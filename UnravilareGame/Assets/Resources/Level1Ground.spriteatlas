@@ -1,0 +1,145 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Level1Ground
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: -723174457, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+    - {fileID: 1229126361, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+    - {fileID: 1101014760, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+    - {fileID: -1898560294, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+    - {fileID: 626005069, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+    - {fileID: 1231895839, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+    - {fileID: -794978330, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+    - {fileID: 1161897926, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+    - {fileID: 1307761513, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+    - {fileID: -1122857012, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+    - {fileID: 1699146567, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+    - {fileID: -30437783, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+    - {fileID: -475062349, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+    - {fileID: 188774439, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+    - {fileID: -497392313, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+    - {fileID: 421668050, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+    - {fileID: -873384332, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+    - {fileID: 1683205405, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+    - {fileID: 1931553019, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+    - {fileID: -1320968534, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+    - {fileID: 46133890, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+    - {fileID: 1229170389, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+    - {fileID: 1384491601, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+    - {fileID: 709504899, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+    - {fileID: -330861247, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+    - {fileID: 1568663655, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+    - {fileID: -451263427, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+    - {fileID: 1736844001, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+    - {fileID: 1507944547, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+    - {fileID: -1212260404, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: -1212260404, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+  - {fileID: 1507944547, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+  - {fileID: 709504899, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+  - {fileID: 1384491601, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+  - {fileID: 1931553019, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+  - {fileID: 1229170389, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+  - {fileID: -1320968534, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+  - {fileID: 46133890, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+  - {fileID: -873384332, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+  - {fileID: 1736844001, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+  - {fileID: 1683205405, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+  - {fileID: -451263427, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+  - {fileID: -497392313, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+  - {fileID: 1568663655, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+  - {fileID: 421668050, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+  - {fileID: -330861247, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+  - {fileID: -475062349, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+  - {fileID: 188774439, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+  - {fileID: 1699146567, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+  - {fileID: -30437783, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+  - {fileID: -1122857012, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+  - {fileID: 1307761513, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+  - {fileID: -1898560294, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+  - {fileID: 1101014760, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+  - {fileID: 1229126361, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+  - {fileID: -723174457, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+  - {fileID: 1161897926, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+  - {fileID: -794978330, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+  - {fileID: 1231895839, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+  - {fileID: 626005069, guid: 285568b4126fd9f42a328a46869e9cc3, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - SPA_Rock_Grass_Water_29
+  - SPA_Rock_Grass_Water_28
+  - SPA_Rock_Grass_Water_23
+  - SPA_Rock_Grass_Water_22
+  - SPA_Rock_Grass_Water_18
+  - SPA_Rock_Grass_Water_21
+  - SPA_Rock_Grass_Water_19
+  - SPA_Rock_Grass_Water_20
+  - SPA_Rock_Grass_Water_16
+  - SPA_Rock_Grass_Water_27
+  - SPA_Rock_Grass_Water_17
+  - SPA_Rock_Grass_Water_26
+  - SPA_Rock_Grass_Water_14
+  - SPA_Rock_Grass_Water_25
+  - SPA_Rock_Grass_Water_15
+  - SPA_Rock_Grass_Water_24
+  - SPA_Rock_Grass_Water_12
+  - SPA_Rock_Grass_Water_13
+  - SPA_Rock_Grass_Water_10
+  - SPA_Rock_Grass_Water_11
+  - SPA_Rock_Grass_Water_9
+  - SPA_Rock_Grass_Water_8
+  - SPA_Rock_Grass_Water_3
+  - SPA_Rock_Grass_Water_2
+  - SPA_Rock_Grass_Water_1
+  - SPA_Rock_Grass_Water_0
+  - SPA_Rock_Grass_Water_7
+  - SPA_Rock_Grass_Water_6
+  - SPA_Rock_Grass_Water_5
+  - SPA_Rock_Grass_Water_4
+  m_RenderDataMap: {}
+  m_Tag: Level1Ground
+  m_IsVariant: 0

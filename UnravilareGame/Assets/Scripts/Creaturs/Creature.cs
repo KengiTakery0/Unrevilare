@@ -7,8 +7,7 @@ public class Creature : MonoBehaviour
 
     [Header("Phisics")]
     [SerializeField] protected Rigidbody2D _creatureRigitBody;
-   
-
+    [SerializeField] protected BoxCollider2D _groungcheck;
 
 
 
@@ -19,6 +18,7 @@ public class Creature : MonoBehaviour
     [SerializeField] float _movingspeed;
 
 
+    private static readonly int isFallingKey = Animator.StringToHash("isFalling");
     private static readonly int isMovingKey = Animator.StringToHash("isMoving");
    
 
@@ -28,13 +28,21 @@ public class Creature : MonoBehaviour
 
     protected virtual void FixedUpdate()
     {
-        Move();
         FlipCreatureSprite();
+        isFalling();
     }
 
-    void Move()
+
+    private void isFalling()
     {
-        _creatureRigitBody.velocity = new Vector2(Mathf.Pow(_movingspeed, 2) * moveDirection, _creatureRigitBody.velocity.y);
+        if (_creatureRigitBody.velocity.y < 0f && !_groungcheck.IsTouchingLayers(LayerMask.GetMask("Ground")))
+        {
+            _creatureAnimator.SetTrigger(isFallingKey);
+        }
+    }
+    protected virtual void Move(float moveDir)
+    {
+        _creatureRigitBody.velocity = new Vector2(Mathf.Pow(_movingspeed, 2) * moveDir, _creatureRigitBody.velocity.y);
         bool hasHorizontalMove = Mathf.Abs(_creatureRigitBody.velocity.x) > Mathf.Epsilon;
         _creatureAnimator.SetBool(isMovingKey, hasHorizontalMove);
     }

@@ -11,8 +11,5 @@ public class Enemy : Creature
         base.FixedUpdate();
     }
 
-    private void Movement()
-    {
-        
-    }
+   
 }

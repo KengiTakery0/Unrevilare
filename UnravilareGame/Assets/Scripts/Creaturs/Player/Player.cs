@@ -4,20 +4,19 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
-public class Player : Creature
+public class Player : Creature, IAbilityController
 {
     [SerializeField] float _jumpStreigth;
 
     [SerializeField] PlayerInput playerInput;
-    [SerializeField] protected BoxCollider2D _groungcheck;
+    [SerializeField] List<AbilityObject> _playerabilities;
 
     private static readonly int isJumpingKey = Animator.StringToHash("isJumped");
-    private static readonly int isFallingKey = Animator.StringToHash("isFalling");
-
 
     void OnEnable()
     {
         playerInput.onJump += Jump;
+        playerInput.onMove += base.Move;
     }
     private void OnDisable()
     {
@@ -27,21 +26,19 @@ public class Player : Creature
     {
         base.FixedUpdate();
         moveDirection = playerInput.moveDir;
-        isFalling();
+        Debug.Log(_creatureRigitBody.velocity.y);
     }
-    private void isFalling()
-    {
-        if (_creatureRigitBody.velocity.y < 0f && _groungcheck.IsTouchingLayers(LayerMask.NameToLayer("Ground")))
-        {
-            _creatureAnimator.SetTrigger(isFallingKey);
-        }
-    }
+    
 
     private void Jump()
     {
         if (!_groungcheck.IsTouchingLayers(LayerMask.GetMask("Ground"))) return;
-        _creatureRigitBody.velocity += new Vector2(_creatureRigitBody.velocity.x, _jumpStreigth);
+        _creatureRigitBody.AddForce(Vector2.up* _jumpStreigth,ForceMode2D.Impulse);
         _creatureAnimator.SetTrigger(isJumpingKey);
     }
 
+    public void UseAbility(AbilityObject ability)
+    {
+       
+    }
 }
