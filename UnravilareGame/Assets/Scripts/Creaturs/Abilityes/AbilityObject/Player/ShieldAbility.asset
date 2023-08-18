@@ -10,18 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a252f5a538374204ab4c04c17c34f4f2, type: 3}
-  m_Name: AtackAbility
+  m_Name: ShieldAbility
   m_EditorClassIdentifier: 
   type: 1
   ability:
-    rid: 8992038449036394496
+    rid: 8992038463878987784
   references:
     version: 2
     RefIds:
-    - rid: 8992038449036394496
-      type: {class: AbilityObject/AtackAbility, ns: , asm: Assembly-CSharp}
+    - rid: 8992038463878987784
+      type: {class: AbilityObject/ShieldAbility, ns: , asm: Assembly-CSharp}
       data:
-        _iD: 0
-        _actionTime: 0
+        _iD: 4
+        _actionTime: 2
         _distance: 0
-        _damage: 0
+        _level: 0
+        _hp: 0
+        _abilityObject: {fileID: 0}
+        _shieldRange: 0

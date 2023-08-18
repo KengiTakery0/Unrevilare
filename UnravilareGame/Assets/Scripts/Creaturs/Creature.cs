@@ -24,7 +24,7 @@ public class Creature : MonoBehaviour
 
     public float moveDirection { get; set; }
 
-
+    bool hasHorizontalMove;
 
     protected virtual void FixedUpdate()
     {
@@ -43,7 +43,7 @@ public class Creature : MonoBehaviour
     protected virtual void Move(float moveDir)
     {
         _creatureRigitBody.velocity = new Vector2(Mathf.Pow(_movingspeed, 2) * moveDir, _creatureRigitBody.velocity.y);
-        bool hasHorizontalMove = Mathf.Abs(_creatureRigitBody.velocity.x) > Mathf.Epsilon;
+         hasHorizontalMove = Mathf.Abs(_creatureRigitBody.velocity.x) > Mathf.Epsilon;
         _creatureAnimator.SetBool(isMovingKey, hasHorizontalMove);
     }
 
@@ -52,7 +52,6 @@ public class Creature : MonoBehaviour
 
     void FlipCreatureSprite()
     {
-        bool hasHorizontalMove = Mathf.Abs(_creatureRigitBody.velocity.x) > Mathf.Epsilon;
 
         if (hasHorizontalMove)
         {

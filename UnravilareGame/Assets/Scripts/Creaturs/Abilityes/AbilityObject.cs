@@ -4,109 +4,80 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-[CreateAssetMenu(fileName ="Ability",menuName ="Abilities")]
+[Serializable]
+public enum AbilityType
+{
+    Atack,
+    Shield,
+    Heal,
+    Phantom
+}
+[CreateAssetMenu(fileName = "Ability", menuName = "Abilities")]
 public class AbilityObject : ScriptableObject
 {
-#if UNITY_EDITOR
-    [CustomEditor(typeof(AbilityObject))]
-
-    public class AbilityObjectInspector : Editor
-    {
-        SerializedProperty m_type;
-        SerializedProperty m_ability;
-
-        private void OnEnable()
-        {
-            m_type = serializedObject.FindProperty("type");
-            m_ability = serializedObject.FindProperty("ability");
-        }
-
-        public override void OnInspectorGUI()
-        {
-            serializedObject.Update();
-
-            EditorGUI.BeginChangeCheck();
-            EditorGUILayout.PropertyField(m_type);
-            if (EditorGUI.EndChangeCheck())
-            {
-                m_ability.managedReferenceValue =
-                        AbilityObject.CreateBlankData((AbilityType)m_type.intValue);
-            }
-
-            DrawPropertiesExcluding(serializedObject, new string[] { "type", "m_Script" });
-            serializedObject.ApplyModifiedProperties();
-        }
-    }
-#endif
-    [System.Serializable]
-    public enum AbilityType
-    {
-        Shield,
-        Atack,
-        Heal,
-        Phantom
-    }
-
-    // Determines how to create an Item from each ItemType
     public static Ability CreateBlankData(AbilityType type)
     {
         switch (type)
         {
-            case AbilityType.Shield: return new ShieldItem();
             case AbilityType.Atack: return new AtackAbility();
+            case AbilityType.Shield: return new ShieldAbility();
             case AbilityType.Heal: return new HealAbility();
-            case AbilityType.Phantom: return new PhantoAbility();
+            case AbilityType.Phantom: return new PhantomAbility();
             default: return null;
         }
     }
     #region ABILITYES
-    [System.Serializable]
+    [Serializable]
     public class Ability
     {
         [SerializeField] int _iD;
+
         [SerializeField] float _actionTime;
         [SerializeField] float _distance;
 
-        public void Use()
-        {
-            throw new NotImplementedException();
-        }
+        [SerializeField] float _level;
+        [SerializeField] float _hp;
+        [SerializeField] GameObject _object;
+
+        public int ID { get => _iD; }
+        public float actionTime { get => _actionTime; }
+        public float distance { get => _distance; }
+        public float level { get => _level; }
+        public float hp { get => _hp; }
+        public GameObject Object { get => _object; }
     }
 
-    [System.Serializable]
+    [Serializable]
     public class AtackAbility : Ability
     {
-        [SerializeField] int _damage;
+        [SerializeField] float _damage;
+        [SerializeField] float _atackRange;
+        public float damage { get => _damage; }
+        public float atackRange { get => _atackRange; }
 
-        public AtackAbility()
-        {
+       // public AtackAbility() { }
 
-        }
     }
 
-    [System.Serializable]
-    public class ShieldItem : Ability
+    [Serializable]
+    public class ShieldAbility : Ability
     {
-
-        public ShieldItem()
-        {
-
-        }
+        [SerializeField] float _shieldRange;
+        public float shieldRange { get => _shieldRange; }
+       // public ShieldItem() {  }
 
     }
+    [Serializable]
     public class HealAbility : Ability
     {
-        public HealAbility()
-        {
-
-        }
+        [SerializeField] float _restoreHpPerSec;
+        public float restoreHpPerSec { get => _restoreHpPerSec; }
+       // public HealAbility()   {  }
     }
-    public class PhantoAbility : Ability
+    [Serializable]
+    public class PhantomAbility : Ability
     {
-        public PhantoAbility()
-        {
-
-        }
+      //  public PhantomAbility(){}
     }
 
 

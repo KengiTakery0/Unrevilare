@@ -8,6 +8,7 @@ public class PlayerInput : MonoBehaviour
     public float moveDir { get; private set; }
     public Action onJump;
     public Action<float> onMove;
+    public UnityEvent onUseAbilty;
 
     public void OnMove(InputValue inputValue)
     {
@@ -22,10 +23,7 @@ public class PlayerInput : MonoBehaviour
 
     public void OnApplyAbility(InputValue inputValue)
     {
-        if (inputValue.Get<float>() != 0)
-        {
-
-        }
+       if (inputValue.isPressed) onUseAbilty?.Invoke();
     }
     public void OnShowAbility(InputValue inputValue)
     {
