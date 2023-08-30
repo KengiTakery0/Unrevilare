@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
+
 [Serializable]
 public enum AbilityType
 {
@@ -12,9 +13,49 @@ public enum AbilityType
     Heal,
     Phantom
 }
+
+
+#if UNITY_EDITOR
+[CustomEditor(typeof(AbilityObject))]
+
+public class AbilityObjectInspector : Editor
+{
+    SerializedProperty m_type;
+    SerializedProperty m_abilityInfo;
+
+    private void OnEnable()
+    {
+        m_type = serializedObject.FindProperty("type");
+        m_abilityInfo = serializedObject.FindProperty("abilityInfo");
+    }
+
+    public override void OnInspectorGUI()
+    {
+        serializedObject.Update();
+
+        EditorGUI.BeginChangeCheck();
+        EditorGUILayout.PropertyField(m_type);
+        if (EditorGUI.EndChangeCheck())
+        {
+            m_abilityInfo.managedReferenceValue =
+                    AbilityObject.CreateBlankData((AbilityType)m_type.intValue);
+        }
+
+        DrawPropertiesExcluding(serializedObject, new string[] { "type", "m_Script" });
+        serializedObject.ApplyModifiedProperties();
+    }
+}
+#endif
+
 [CreateAssetMenu(fileName = "Ability", menuName = "Abilities")]
 public class AbilityObject : ScriptableObject
 {
+
+
+
+
+
+
     public static Ability CreateBlankData(AbilityType type)
     {
         switch (type)
@@ -52,10 +93,12 @@ public class AbilityObject : ScriptableObject
     {
         [SerializeField] float _damage;
         [SerializeField] float _atackRange;
-        public float damage { get => _damage; }
+        public float damage { get => _damage;  }
         public float atackRange { get => _atackRange; }
 
-       // public AtackAbility() { }
+        public AtackAbility()
+        {
+        }
 
     }
 
@@ -64,7 +107,7 @@ public class AbilityObject : ScriptableObject
     {
         [SerializeField] float _shieldRange;
         public float shieldRange { get => _shieldRange; }
-       // public ShieldItem() {  }
+        // public ShieldItem() {  }
 
     }
     [Serializable]
@@ -72,12 +115,12 @@ public class AbilityObject : ScriptableObject
     {
         [SerializeField] float _restoreHpPerSec;
         public float restoreHpPerSec { get => _restoreHpPerSec; }
-       // public HealAbility()   {  }
+        // public HealAbility()   {  }
     }
     [Serializable]
     public class PhantomAbility : Ability
     {
-      //  public PhantomAbility(){}
+        //  public PhantomAbility(){}
     }
 
 
