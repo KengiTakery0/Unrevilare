@@ -34,15 +34,15 @@ public class Creature : MonoBehaviour
 
     private void isFalling()
     {
-        if (_creatureRigitBody.velocity.y < 0f && !_groungcheck.IsTouchingLayers(LayerMask.GetMask("Ground")))
+        if (_creatureRigitBody.linearVelocity.y < 0f && !_groungcheck.IsTouchingLayers(LayerMask.GetMask("Ground")))
         {
             _creatureAnimator.SetTrigger(isFallingKey);
         }
     }
     protected virtual void Move(float moveDir)
     {
-        _creatureRigitBody.velocity = new Vector2(Mathf.Pow(_movingspeed, 2) * moveDir, _creatureRigitBody.velocity.y);
-         hasHorizontalMove = Mathf.Abs(_creatureRigitBody.velocity.x) > Mathf.Epsilon;
+        _creatureRigitBody.linearVelocity = new Vector2(Mathf.Pow(_movingspeed, 2) * moveDir, _creatureRigitBody.linearVelocity.y);
+         hasHorizontalMove = Mathf.Abs(_creatureRigitBody.linearVelocity.x) > Mathf.Epsilon;
         _creatureAnimator.SetBool(isMovingKey, hasHorizontalMove);
         FlipCreatureSprite();
     }
@@ -54,7 +54,7 @@ public class Creature : MonoBehaviour
     {
         if (hasHorizontalMove)
         {
-            transform.localScale = new Vector2(Mathf.Sign(_creatureRigitBody.velocity.x), 1f);
+            transform.localScale = new Vector2(Mathf.Sign(_creatureRigitBody.linearVelocity.x), 1f);
         }
     }
 }

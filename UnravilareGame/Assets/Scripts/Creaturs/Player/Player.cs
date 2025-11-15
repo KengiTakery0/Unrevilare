@@ -28,7 +28,7 @@ public class Player : Creature, IAbilityController
     {
         base.FixedUpdate();
         moveDirection = playerInput.moveDir;
-        Debug.Log(_creatureRigitBody.velocity.y);
+        Debug.Log(_creatureRigitBody.linearVelocity.y);
     }
 
 
@@ -41,10 +41,21 @@ public class Player : Creature, IAbilityController
 
     public void UseAbility(AbilityObject ability)
     {
-        Vector3 curentAbilityTransform = new(_abilityTarnsform.position.x + (ability.ability.distance * transform.lossyScale.x), 
-            _abilityTarnsform.position.y, _abilityTarnsform.position.z);
+        // Добавляем проверку на null
+        if (ability == null || ability.ability == null || ability.ability.Object == null)
+        {
+            Debug.LogError("Ability or its components are null!");
+            return;
+        }
+    
+        // Более безопасное вычисление позиции
+        Vector3 abilityOffset = new Vector3(ability.ability.distance * transform.lossyScale.x, 0, 0);
+        Vector3 currentAbilityTransform = _abilityTarnsform.position + abilityOffset;
         
-        GameObject g = Instantiate(ability.ability.Object, curentAbilityTransform, Quaternion.Euler(0, 0, 0));
-        g.transform.localScale= transform.localScale;
+        GameObject g = Instantiate(ability.ability.Object, currentAbilityTransform, Quaternion.identity);
+        g.transform.localScale = transform.lossyScale; // Используем lossyScale для мирового масштаба
+        
+        // Добавляем отладку
+        Debug.Log($"Ability spawned at: {currentAbilityTransform}");
     }
 }
