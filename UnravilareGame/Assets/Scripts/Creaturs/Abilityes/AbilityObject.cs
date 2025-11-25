@@ -17,16 +17,15 @@ public enum AbilityType
 
 #if UNITY_EDITOR
 [CustomEditor(typeof(AbilityObject))]
-
 public class AbilityObjectInspector : Editor
 {
     SerializedProperty m_type;
-    SerializedProperty m_abilityInfo;
+    SerializedProperty m_ability; // Изменили название
 
     private void OnEnable()
     {
         m_type = serializedObject.FindProperty("type");
-        m_abilityInfo = serializedObject.FindProperty("abilityInfo");
+        m_ability = serializedObject.FindProperty("ability"); // Теперь ищем поле ability
     }
 
     public override void OnInspectorGUI()
@@ -37,10 +36,11 @@ public class AbilityObjectInspector : Editor
         EditorGUILayout.PropertyField(m_type);
         if (EditorGUI.EndChangeCheck())
         {
-            m_abilityInfo.managedReferenceValue =
-                    AbilityObject.CreateBlankData((AbilityType)m_type.intValue);
+            m_ability.managedReferenceValue = 
+                AbilityObject.CreateBlankData((AbilityType)m_type.intValue);
         }
 
+        // Отображаем все свойства кроме "type" и "m_Script"
         DrawPropertiesExcluding(serializedObject, new string[] { "type", "m_Script" });
         serializedObject.ApplyModifiedProperties();
     }
@@ -50,12 +50,6 @@ public class AbilityObjectInspector : Editor
 [CreateAssetMenu(fileName = "Ability", menuName = "Abilities")]
 public class AbilityObject : ScriptableObject
 {
-
-
-
-
-
-
     public static Ability CreateBlankData(AbilityType type)
     {
         switch (type)
@@ -64,7 +58,9 @@ public class AbilityObject : ScriptableObject
             case AbilityType.Shield: return new ShieldAbility();
             case AbilityType.Heal: return new HealAbility();
             case AbilityType.Phantom: return new PhantomAbility();
-            default: return null;
+            default: 
+                Debug.LogError($"Unknown ability type: {type}");
+                return null;                
         }
     }
     #region ABILITYES
