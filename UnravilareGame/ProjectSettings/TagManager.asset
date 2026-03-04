@@ -2,12 +2,17 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
+  serializedVersion: 3
   tags:
   - HealAbility
   - ShadowAbility
   - AtackAbility
   - ShieldAbility
+  - Bridge
+  - AcidTrigger
+  - WaterTrigger
+  - Undefined
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -69,3 +74,5 @@ TagManager:
   - name: UI
     uniqueID: 4201101871
     locked: 0
+  m_RenderingLayers:
+  - Default

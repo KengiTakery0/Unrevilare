@@ -1,12 +1,11 @@
-using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class TriggerEnterComponent : MonoBehaviour
+public class TriggerStayComponent : MonoBehaviour
 {
     [SerializeField] UnityEvent<GameObject> _action;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         _action?.Invoke(collision.gameObject);
     }

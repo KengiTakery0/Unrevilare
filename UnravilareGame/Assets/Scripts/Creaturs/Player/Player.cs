@@ -1,11 +1,13 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class Player : Creature, IAbilityController
 {
+
+    public GameObject bullet;
+    public GameObject Panel;
+    public Transform bulletpos;
     [SerializeField] float _jumpStreigth;
 
     [SerializeField] PlayerInput playerInput;
@@ -29,8 +31,13 @@ public class Player : Creature, IAbilityController
         base.FixedUpdate();
         moveDirection = playerInput.moveDir;
         Debug.Log(_creatureRigitBody.linearVelocity.y);
+        if (Input.GetKeyUp(KeyCode.R)) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+       
     }
-
+    public void WIN()
+    {
+        Panel.SetActive(true);
+    }
 
     private void Jump()
     {
@@ -41,21 +48,22 @@ public class Player : Creature, IAbilityController
 
     public void UseAbility(AbilityObject ability)
     {
+       
         // Добавляем проверку на null
-        if (ability == null || ability.ability == null || ability.ability.Object == null)
-        {
-            Debug.LogError("Ability or its components are null!");
-            return;
-        }
-    
-        // Более безопасное вычисление позиции
-        Vector3 abilityOffset = new Vector3(ability.ability.distance * transform.lossyScale.x, 0, 0);
-        Vector3 currentAbilityTransform = _abilityTarnsform.position + abilityOffset;
-        
-        GameObject g = Instantiate(ability.ability.Object, currentAbilityTransform, Quaternion.identity);
-        g.transform.localScale = transform.lossyScale; // Используем lossyScale для мирового масштаба
-        
-        // Добавляем отладку
-        Debug.Log($"Ability spawned at: {currentAbilityTransform}");
+        //if (ability == null || ability.ability == null || ability.ability.Object == null)
+        //{
+        //    Debug.LogError("Ability or its components are null!");
+        //    return;
+        //}
+
+        //// Более безопасное вычисление позиции
+        //Vector3 abilityOffset = new Vector3(ability.ability.distance * transform.lossyScale.x, 0, 0);
+        //Vector3 currentAbilityTransform = _abilityTarnsform.position + abilityOffset;
+
+        //GameObject g = Instantiate(ability.ability.Object, currentAbilityTransform, Quaternion.identity);
+        //g.transform.localScale = transform.lossyScale; // Используем lossyScale для мирового масштаба
+
+        //// Добавляем отладку
+        //Debug.Log($"Ability spawned at: {currentAbilityTransform}");
     }
 }
